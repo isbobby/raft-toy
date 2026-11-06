@@ -1,0 +1,16 @@
+version: '3'
+
+vars:
+  SRC_DIR: "."
+  DST_DIR: "."
+
+tasks:
+  proto:gen:
+    desc: "Generate Go and gRPC stubs from protobuf contracts"
+    cmds:
+      - |
+        protoc -I={{.SRC_DIR}} \
+          --go_out={{.DST_DIR}}/src \
+          --go-grpc_out={{.DST_DIR}}/src \
+          {{.SRC_DIR}}/contracts/raft_service.proto
+    silent: false

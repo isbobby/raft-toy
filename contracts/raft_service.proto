@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package raft.consensus.v1;
+
+option go_package = "pb/raft";
+
+
+service RaftService {
+  rpc RequestVote(RequestVoteRequest) returns (RequestVoteResponse);
+  rpc AppendEntries(AppendEntriesRequest) returns (AppendEntriesResponse);
+  rpc InstallSnapshot(InstallSnapshotRequest) returns (InstallSnapshotResponse);
+}
+
+message RequestVoteRequest {}
+message AppendEntriesRequest {}
+message InstallSnapshotRequest {}
+
+message RequestVoteResponse {}
+message AppendEntriesResponse {}
+message InstallSnapshotResponse {}
