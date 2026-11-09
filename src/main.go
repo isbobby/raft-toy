@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net"
-	"raft-toy/internal/service"
+	"raft-toy/internal/raft"
 	pb "raft-toy/pb/raft"
 
 	"google.golang.org/grpc"
@@ -18,7 +18,7 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 
-	raftService := service.New()
+	raftService := raft.NewService()
 
 	pb.RegisterRaftServiceServer(grpcServer, raftService)
 

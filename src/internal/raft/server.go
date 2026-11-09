@@ -1,4 +1,4 @@
-package service
+package raft
 
 import (
 	"context"
@@ -21,6 +21,6 @@ func (s *service) InstallSnapshot(ctx context.Context, req *pb.InstallSnapshotRe
 	return &pb.InstallSnapshotResponse{}, nil
 }
 
-func New() *service {
+func NewService() *service {
 	return &service{}
 }
